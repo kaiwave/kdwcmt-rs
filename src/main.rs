@@ -1,5 +1,5 @@
 mod daisyworld;
 
 fn main() {
-  daisyworld::daisyWorld(initOptions::default());                                        // Run daisyworld
+  daisyworld::daisy_world(daisyworld::InitOptions::default());                                        // Run daisyworld
 }
