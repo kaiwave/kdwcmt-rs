@@ -37,9 +37,15 @@ impl Default for InitOptions {
 fn check_albedo_validity(albedo: f64) -> bool {
     if albedo < 0.0 || albedo > 1.0 {
         println!("Albedo value {} must be in range [0, 1]", albedo);
-        return false;
+        return false; 
     }
     true
+}
+
+fn total_albedo(white_area: f64, black_area: f64, grey_area: f64, white_albedo: f64, black_albedo: f64, grey_albedo: f64) -> f64 { //might clean ts up into pairs later if i can ceebs
+  let total_area = white_area + black_area + grey_area;
+  let total_albedo = (white_area * white_albedo + black_area * black_albedo + grey_area * grey_albedo) / total_area;
+  return total_albedo;
 }
 
 fn irradiance_over_time(time: f64, solar_fraction: f64) -> f64 {
